@@ -19,15 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="87dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="364dp"
-        android:text="Ichat with"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="29dp" />
-
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
@@ -72,17 +63,14 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="214dp"
+        android:layout_width="279dp"
         android:layout_height="59dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ProgressBar

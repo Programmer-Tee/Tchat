@@ -1,13 +1,19 @@
 package com.example.tobeisun.tchat;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+public class Messages {
+    String messages ;
+    public Messages()
+    {
 
-public class Messages extends AppCompatActivity {
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messages);
+
+    public Messages(String messages) {
+        this.messages = messages;
+    }
+
+
+    public String getMessages() {
+        return messages;
     }
 }

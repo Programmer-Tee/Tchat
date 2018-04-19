@@ -15,7 +15,6 @@
         <activity android:name=".Signup" />
         <activity android:name=".Profile" />
         <activity android:name=".Signup_cont" />
-        <activity android:name=".Messages" />
         <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
