@@ -2,6 +2,7 @@ package com.example.tobeisun.tchat;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatRadioButton;
 import  android.widget.EditText;
 import android.widget.Button ;
 import android.widget.RadioGroup;
@@ -59,39 +60,19 @@ RadioGroup gender ;
        next.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
-                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
-                  finish();
+
+                savefirstname();
+                savelastname() ;
+                saveaddress() ;
+                savenumber();
 
 
 
-   savefirstname();
-   savelastname() ;
-    saveaddress() ;
-    savenumber();
 
 
 
-    // Is the button now checked?
-    boolean checked = ((RadioButton) view).isChecked();
 
-    // Check which radio button was clicked
-    switch(view.getId()) {
-        case R.id.radioButtonFemale:
-            if (checked)
-                {
-                    checkfemale();
-
-}
-                // Pirates are the best
-            break;
-        case R.id.radioButtonMale:
-            if (checked)
-{
-   checkmale() ;
-}
-            break;
-
-}}
+    }
 
 
 
@@ -99,6 +80,8 @@ RadioGroup gender ;
 
 
         });
+
+
     }
 
 
@@ -145,6 +128,9 @@ RadioGroup gender ;
                 dataa.child(message).setValue(d) ;
                 Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
                 firstname.setText(" ");
+                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
+                finish();
+
 
 
 
@@ -170,6 +156,9 @@ RadioGroup gender ;
                 dataa.child(message).setValue(d) ;
                 Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
                 lastname.setText(" ");
+                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
+                finish();
+
 
 
 
@@ -194,6 +183,9 @@ RadioGroup gender ;
                 dataa.child(message).setValue(d) ;
                 Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
                 numberr.setText(" ");
+                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
+                finish();
+
 
 
 
@@ -224,6 +216,8 @@ RadioGroup gender ;
                 dataa.child(message).setValue(d) ;
                 Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
                 Address.setText(" ");
+                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
+                finish();
 
 
 
@@ -256,6 +250,8 @@ RadioGroup gender ;
                 Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
 
 
+                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
+                finish();
 
 
             }

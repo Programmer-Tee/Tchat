@@ -84,7 +84,7 @@ dataa= FirebaseDatabase.getInstance().getReference("Messages") ;
                             if(task.isSuccessful()){
 
 
-                                startActivity(new Intent(Signup.this,Profile.class));
+                                startActivity(new Intent(Signup.this,DisplayMessage.class));
                                 finish();
 
                             }else{

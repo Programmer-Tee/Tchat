@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
                             bar.setVisibility(View.GONE);
                             if(task.isSuccessful())
                             {
-                                startActivity(new Intent(Login.this, Profile.class));
+                                startActivity(new Intent(Login.this, DisplayMessage.class));
 
                                 finish();
 
@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(Login.this , "Check Email and password again",Toast.LENGTH_LONG).show();}
+                    Toast.makeText(Login.this , "Invalid Email and password again",Toast.LENGTH_LONG).show();}
             }
 
 
