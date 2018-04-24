@@ -1,5 +1,6 @@
 package com.example.tobeisun.tchat;
 
+import android.location.Address;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatRadioButton;
@@ -61,10 +62,7 @@ RadioGroup gender ;
             @Override
             public void onClick(android.view.View view) {
 
-                savefirstname();
-                savelastname() ;
-                saveaddress() ;
-                savenumber();
+                savedetails();
 
 
 
@@ -116,26 +114,34 @@ RadioGroup gender ;
     }
 
 
-     private void savefirstname()
+     private void savedetails()
         {
             String firstName = firstname.getText().toString().trim();
             String secondName = lastname.getText().toString().trim();
             String number = numberr.getText().toString().trim();
+            String add= Address.getText().toString().trim();
 
 
 
 
 
-            if(!android.text.TextUtils.isEmpty(firstName)||!android.text.TextUtils.isEmpty(secondName)||!android.text.TextUtils.isEmpty(number) )
+            if(!(android.text.TextUtils.isEmpty(firstName)||android.text.TextUtils.isEmpty(secondName)||android.text.TextUtils.isEmpty(number)  ||android.text.TextUtils.isEmpty(add)) )
             {
 
                 Messages firstNameData =new Messages() ;
                 Messages lastNameData =  new Messages();
+                Messages numberr= new Messages();
+                Messages address= new Messages();
+
                 dataa.child(firstName).setValue(firstNameData) ;
-
                 dataa.child(secondName).setValue(lastNameData);
+                dataa.child(number).setValue(numberr);
+                dataa.child(add).setValue(address);
 
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
+
+
+
+                Toast.makeText(this," saved",android.widget.Toast.LENGTH_LONG).show();
                 firstname.setText(" ");
                 startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
                 finish();
@@ -153,207 +159,7 @@ RadioGroup gender ;
         }
 
 
-        private void savelastname()
-        {
-            String message = lastname.getText().toString().trim();
 
-
-            if(!android.text.TextUtils.isEmpty(message))
-            {
-
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-                lastname.setText(" ");
-                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
-                finish();
-
-
-
-
-            }
-
-            else
-            {
-                Toast.makeText(this,"Empty field, please enter text", Toast.LENGTH_LONG).show();
-            }
-
-        }
-
-          private void savenumber()
-        {
-            String message = numberr.getText().toString().trim();
-
-
-            if(!android.text.TextUtils.isEmpty(message))
-            {
-
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-                numberr.setText(" ");
-                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
-                finish();
-
-
-
-
-            }
-
-
-
-
-
-
-            else
-            {
-                Toast.makeText(this,"Empty field, please enter phone number", Toast.LENGTH_LONG).show();
-            }
-             confirmnumber () ;
-
-        }
-
-          private void saveaddress()
-        {
-            String message = Address.getText().toString().trim();
-
-
-            if(!android.text.TextUtils.isEmpty(message))
-            {
-
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-                Address.setText(" ");
-                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
-                finish();
-
-
-
-            }
-
-            else
-            {
-                Toast.makeText(this,"Empty field, please enter address", Toast.LENGTH_LONG).show();
-            }
-
-        }
-
-
-  private void savegender()
-        {
-
-            final int selected = gender.getCheckedRadioButtonId();
-
-            String message = lastname.getText().toString().trim();
-
-
-
-
-            if(!android.text.TextUtils.isEmpty(message))
-            {
-
-
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-
-
-                startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
-                finish();
-
-
-            }
-
-            else
-            {
-                Toast.makeText(this,"Empty field, please enter text", Toast.LENGTH_LONG).show();
-            }
-
-        }
-
-
-
-        private void confirmnumber ()
-
-
-
-{
-
-    String message = numberr.getText().toString().trim();
-      if ( !(numberr.getText().toString().trim().length() == 11))
-                      {
-                          Toast.makeText(this,"Number must be 11 digits", Toast.LENGTH_LONG).show();
-
-                      }
-
-                      else if(numberr.getText().toString().trim().length() == 11)
-                          {  Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-                numberr.setText(" ");
-
-                                       }
-
-
-
-
-
-
-
-}
-
-
-
-
-private void checkfemale()
-{
-     String message = Female.getText().toString();
-
-
-            if(!android.text.TextUtils.isEmpty(message))
-            {
-
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-                Address.setText(" ");
-
-
-
-            }
-
-            else
-            {
-                Toast.makeText(this,"Empty field, please pick a gender", Toast.LENGTH_LONG).show();
-            };
-}
-
-
-
-private void checkmale()
-{
-      String message = male.getText().toString();
-
-
-            if(!android.text.TextUtils.isEmpty(message))
-            {
-
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
-                Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
-                Address.setText(" ");
-
-
-
-            }
-
-            else
-            {
-                Toast.makeText(this,"Empty field, please pick a gender", Toast.LENGTH_LONG).show();
-            };
-
-}
 }
 
 

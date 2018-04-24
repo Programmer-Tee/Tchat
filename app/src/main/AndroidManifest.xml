@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayMessage" />
-        <activity android:name=".Signout"></activity>
     </application>
 
 </manifest>

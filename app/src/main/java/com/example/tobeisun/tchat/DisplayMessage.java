@@ -37,9 +37,9 @@ public class DisplayMessage extends AppCompatActivity {
 
         fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         listView = (ListView) findViewById(R.id.listView);
-;
+        ;
 
-        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivity(new Intent(DisplayMessage.this, Login.class));
         } else {
@@ -50,26 +50,17 @@ public class DisplayMessage extends AppCompatActivity {
             // Load chat room contents
             display();
         }
-        fab.setOnClickListener(new View.OnClickListener()
-        {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 input = (EditText) findViewById(R.id.editTextInput);
 
                 // Read the input field and push a new instance
                 // of com.example.tobeisun.firstapp.ChatMessage to the Firebase database
-                FirebaseDatabase.getInstance()
-                        .getReference()
-                        .push()
-                        .setValue(new ChatMessage(input.getText().toString(),
-                                FirebaseAuth.getInstance()
-                                        .getCurrentUser()
-                                        .getEmail())
-                        );
+                FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getEmail()));
 
                 // Clear the input
                 input.setText("");
-
 
 
             }
@@ -81,8 +72,7 @@ public class DisplayMessage extends AppCompatActivity {
 
 
     public void display() {
-        adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
-                R.layout.message, FirebaseDatabase.getInstance().getReference()) {
+        adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class, R.layout.message, FirebaseDatabase.getInstance().getReference()) {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
@@ -111,25 +101,20 @@ public class DisplayMessage extends AppCompatActivity {
         return true;
     }
 
+    //handles the menu sign out part
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.menu_sign_out) {
-            AuthUI.getInstance().signOut(this)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(DisplayMessage.this,
-                                    "You have been signed out.",
-                                    Toast.LENGTH_LONG)
-                                    .show();
+        if (item.getItemId() == R.id.menu_sign_out) {
+            startActivity(new Intent(DisplayMessage.this, Home.class));
 
-                            // Close activity
-                            finish();
-                        }
-                    });
+            // Close activity
+            finish();
         }
         return true;
     }
+}
 
-    }
+
+
+
 
