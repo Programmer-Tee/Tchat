@@ -1,6 +1,7 @@
 package com.example.tobeisun.tchat;
 
 import android.content.Intent;
+import android.hardware.display.DisplayManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -105,10 +106,16 @@ public class DisplayMessage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_sign_out) {
-            startActivity(new Intent(DisplayMessage.this, Home.class));
+            AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(DisplayMessage.this, "You have been signed out.", Toast.LENGTH_SHORT).show();
 
-            // Close activity
-            finish();
+                    // Close activity
+                    finish();
+                }
+            });
+
         }
         return true;
     }
