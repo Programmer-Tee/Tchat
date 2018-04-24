@@ -43,6 +43,8 @@ public class DisplayMessage extends AppCompatActivity {
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             // Start sign in/sign up activity
             startActivity(new Intent(DisplayMessage.this, Login.class));
+
+            finish();
         } else {
             // User is already signed in. Therefore, display
             // a welcome Toast
