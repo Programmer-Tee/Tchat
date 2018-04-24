@@ -14,13 +14,19 @@
         <activity android:name=".Profile" />
         <activity android:name=".Signup_cont" />
         <activity android:name=".Home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".DisplayMessage" />
+        <activity android:name=".DisplayMessage" >
+
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        </activity>
+
     </application>
 
 </manifest>
