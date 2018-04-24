@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="80dp"
+        android:layout_width="114dp"
         android:layout_height="26dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="34dp"
+        android:layout_marginEnd="0dp"
         android:layout_marginTop="17dp"
         android:text="Login "
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,12 +23,12 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="289dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="136dp"
-        android:layout_marginStart="134dp"
+        android:layout_marginStart="54dp"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,10 +37,12 @@
 
     <Button
         android:id="@+id/buttonSignup"
-        android:layout_width="100dp"
+        android:layout_width="139dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="58dp"
+        android:layout_marginEnd="23dp"
         android:text="SignUp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,11 +53,10 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="178dp"
+        android:layout_width="193dp"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/editTextEmail"
-        android:layout_marginBottom="39dp"
+        android:layout_alignTop="@+id/buttonSignup"
+        android:layout_toStartOf="@+id/buttonSignup"
         android:text="Don't have an account ?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,10 +66,10 @@
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="279dp"
-        android:layout_height="60dp"
-        android:layout_alignTop="@+id/progressBarLogin"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="157dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -79,10 +80,10 @@
         android:id="@+id/progressBarLogin"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:layout_height="73dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="61dp"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="456dp" />
 

@@ -118,14 +118,23 @@ RadioGroup gender ;
 
      private void savefirstname()
         {
-            String message = firstname.getText().toString().trim();
+            String firstName = firstname.getText().toString().trim();
+            String secondName = lastname.getText().toString().trim();
+            String number = numberr.getText().toString().trim();
 
 
-            if(!android.text.TextUtils.isEmpty(message))
+
+
+
+            if(!android.text.TextUtils.isEmpty(firstName)||!android.text.TextUtils.isEmpty(secondName)||!android.text.TextUtils.isEmpty(number) )
             {
 
-                Messages d =new Messages() ;
-                dataa.child(message).setValue(d) ;
+                Messages firstNameData =new Messages() ;
+                Messages lastNameData =  new Messages();
+                dataa.child(firstName).setValue(firstNameData) ;
+
+                dataa.child(secondName).setValue(lastNameData);
+
                 Toast.makeText(this,"Message saved",android.widget.Toast.LENGTH_LONG).show();
                 firstname.setText(" ");
                 startActivity(new android.content.Intent (Signup_cont.this, Signup.class));
